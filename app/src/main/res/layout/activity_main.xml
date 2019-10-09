@@ -53,6 +53,10 @@
             android:layout_height="wrap_content"
             android:text="SUBTRAIR" />
 
+        <Button
+        android:text="SUBTRAIR" />
+
+
     </LinearLayout>
 
     <LinearLayout
