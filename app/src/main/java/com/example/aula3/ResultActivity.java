@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import java.text.DecimalFormat;
+
 public class ResultActivity extends AppCompatActivity {
 
     @Override
@@ -15,9 +17,16 @@ public class ResultActivity extends AppCompatActivity {
 
         EditText resultado;
 
-        String vR = getIntent().getStringExtra("vR2");
+        Bundle result = getIntent().getExtras();
+
+        double value;
+        value = result.getDouble("vR2");
+        int valueint = (int) value;
+
 
         resultado = findViewById(R.id.mostrarResultado);
-        resultado.setText(String.valueOf(vR));
+        resultado.setText(String.valueOf(valueint));
+
+
     }
 }

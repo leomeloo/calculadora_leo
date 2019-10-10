@@ -31,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
         btMultiplicar = findViewById(R.id.btMultiplicar);
         btSubtrair = findViewById(R.id.btSubtrair);
 
-        final Activity act = this;
-
                 //Acionando o botao Somar
         btSomar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                double vA = 0, vB = 0, vR;
+                double vA, vB, vR;
 
 
                 vA = Double.parseDouble(valorA.getText().toString());
@@ -46,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
                 vR = vA + vB;
 
-                Intent it = new Intent(act, ResultActivity.class);
-                Intent.putExtra("vR2", vR);
+                Intent it = new Intent(MainActivity.this, ResultActivity.class);
+                it.putExtra("vR2", vR);
                 startActivity(it);
             }
         });
@@ -64,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
                 vR = vA - vB;
 
-                resultado.setText(String.valueOf(vR));
+                Intent it = new Intent(MainActivity.this, ResultActivity.class);
+                it.putExtra("vR2", vR);
+                startActivity(it);
             }
         });
 
@@ -80,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
                 vR = vA * vB;
 
-                resultado.setText(String.valueOf(vR));
+                Intent it = new Intent(MainActivity.this, ResultActivity.class);
+                it.putExtra("vR2", vR);
+                startActivity(it);
             }
         });
 
@@ -96,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
 
                 vR = vA / vB;
 
-                resultado.setText(String.valueOf(vR));
+                Intent it = new Intent(MainActivity.this, ResultActivity.class);
+                it.putExtra("vR2", vR);
+                startActivity(it);
             }
 
         });
