@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/valorA"
+    android:id="@+id/primeiraTela"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,29 +11,27 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Primeiro Valor" />
+        android:text="Digite o primeiro valor:" />
 
     <EditText
         android:id="@+id/vA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/valorB"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Segundo Valor" />
+        android:text="Digite o segundo valor:" />
 
     <EditText
         android:id="@+id/vB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName" />
 
     <LinearLayout
@@ -52,9 +50,6 @@
             android:layout_width="205dp"
             android:layout_height="wrap_content"
             android:text="SUBTRAIR" />
-
-        <Button
-        android:text="SUBTRAIR" />
 
 
     </LinearLayout>
@@ -78,19 +73,4 @@
 
     </LinearLayout>
 
-
-
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Resultado" />
-
-    <EditText
-        android:id="@+id/mostrarResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-</androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>

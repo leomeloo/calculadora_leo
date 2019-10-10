@@ -2,6 +2,8 @@ package com.example.aula3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     EditText valorA,valorB,resultado;
     Button btSomar, btSubtrair, btDividir, btMultiplicar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         //Linkando as variaveis com a activity Text
         valorA = findViewById(R.id.vA);
         valorB = findViewById(R.id.vB);
-        resultado = findViewById(R.id.mostrarResultado);
 
         //Linkando as variaveis com a activity Button
         btSomar = findViewById(R.id.btSomar);
@@ -28,22 +31,28 @@ public class MainActivity extends AppCompatActivity {
         btMultiplicar = findViewById(R.id.btMultiplicar);
         btSubtrair = findViewById(R.id.btSubtrair);
 
-        //Acionando o botao Somar
+        final Activity act = this;
+
+                //Acionando o botao Somar
         btSomar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                double vA, vB, vR;
+                double vA = 0, vB = 0, vR;
+
 
                 vA = Double.parseDouble(valorA.getText().toString());
                 vB = Double.parseDouble(valorB.getText().toString());
 
                 vR = vA + vB;
 
-                resultado.setText(String.valueOf(vR));
+                Intent it = new Intent(act, ResultActivity.class);
+                Intent.putExtra("vR2", vR);
+                startActivity(it);
             }
         });
 
+        //Acionando o botao Subtrair
         btSubtrair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Acionando o botao Multiplicar
         btMultiplicar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Acionando o botao Dividir
         btDividir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
                 resultado.setText(String.valueOf(vR));
             }
+
         });
     }
 }
